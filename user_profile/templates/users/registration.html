@@ -1,0 +1,84 @@
+{% extends 'login_base.html' %}
+
+{% block content %}
+    	<div class="sub-main-w3">
+		<form action="{% url 'article:register' %}" method="post">
+            {% csrf_token %}
+			<h2>Register Now
+				<i class="fas fa-level-down-alt"></i>
+			</h2>
+			<div class="form-style-agile">
+				<label>
+					<i class="fas fa-user"></i>
+					用户名
+				</label>
+				{{ register_form.username }}
+			</div>
+			<div class="form-style-agile">
+				<label>
+					<i class="fas fa-unlock-alt"></i>
+					密码
+				</label>
+				{{ register_form.password1 }}
+			</div>
+            <div class="form-style-agile">
+				<label>
+					<i class="fas fa-unlock-alt"></i>
+					密码
+				</label>
+				{{ register_form.password2 }}
+			</div>
+			<div class="form-style-agile">
+				<label>
+					<i class="fas fa-user"></i>
+					昵称
+				</label>
+				{{ register_form.nickname }}
+			</div>
+			<div class="form-style-agile">
+				<label>
+					<i class="fas fa-user"></i>
+					姓氏
+				</label>
+				{{ register_form.first_name }}
+			</div>
+			<div class="form-style-agile">
+				<label>
+					<i class="fas fa-user"></i>
+					名字
+				</label>
+				{{ register_form.last_name }}
+			</div>
+			<div class="form-style-agile">
+				<label>
+					<i class="fas fa-user"></i>
+					手机号码
+				</label>
+				{{ register_form.mobile_phone }}
+			</div>
+			<div class="form-style-agile">
+				<label>
+					<i class="fas fa-user"></i>
+					QQ
+				</label>
+				{{ register_form.qq }}
+			</div>
+			<div class="form-style-agile">
+				<label>
+					<i class="fas fa-user"></i>
+					工作单位
+				</label>
+				{{ register_form.company }}
+			</div>
+			<div class="form-style-agile">
+				<label>
+					<i class="fas fa-user"></i>
+					邮箱
+				</label>
+				{{ register_form.email }}
+			</div>
+
+			<input type="submit" value="立即注册">
+		</form>
+	</div>
+{% endblock %}

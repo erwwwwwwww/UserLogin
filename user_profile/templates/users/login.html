@@ -1,0 +1,46 @@
+{% extends 'login_base.html' %}
+
+{% block content %}
+	<div class="sub-main-w3">
+		<form action="{% url 'article:login' %}" method="post">
+            {% csrf_token %}
+			<h2>Login Now
+				<i class="fas fa-level-down-alt"></i>
+			</h2>
+
+
+			<div class="form-style-agile">
+                <label>
+					<i class="fas fa-user"></i>
+					用户名
+				</label>
+				{{ login_form.username }}
+			</div>
+			<div class="form-style-agile">
+				<label>
+					<i class="fas fa-unlock-alt"></i>
+					密码
+				</label>
+				{{ login_form.password }}
+			</div>
+			<!-- checkbox -->
+			<div class="wthree-text">
+				<ul>
+					<li>
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>Stay Signed In</span>
+						</label>
+					</li>
+					<li>
+						<a href="#">忘记密码</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //checkbox -->
+			<input type="submit" value="登入">
+		</form>
+	</div>
+
+{% endblock %}
+
